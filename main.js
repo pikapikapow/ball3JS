@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import "./style.css"
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 //Scene
 const scene = new THREE.Scene();
@@ -31,6 +32,8 @@ scene.add(camera)
 
 
 
+
+
 //Renderer
 const canvas = document.querySelector('.webgl')
 // console.log(canvas)
@@ -50,6 +53,8 @@ window.addEventListener('resize', () => {
   renderer.setSize(sizes.width, sizes.height)
 })
 
+//controls
+const controls = new OrbitControls(camera, canvas)
 
 
 const loop = () => {
